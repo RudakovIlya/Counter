@@ -1,0 +1,18 @@
+.count {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00d0ff;
+    border-radius: 16px;
+}
+
+.span {
+    font-weight: 600;
+    font-size: 82px;
+}
+
+.red {
+    color: rgba(227, 24, 24, 0.79);
+}
