@@ -7,9 +7,10 @@ type CountPropsType = {
 }
 
 const Count: React.FC<CountPropsType> = ({count, maxValue}) => {
+    const countClassName = `${styles.span} ${count === maxValue && styles.red}`;
     return (
         <div className={styles.count}>
-            <span className={`${styles.span} ${count === maxValue && styles.red}`}>{count}</span>
+            <span className={countClassName}>{count}</span>
         </div>
     );
 };

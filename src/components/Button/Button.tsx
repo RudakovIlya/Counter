@@ -16,7 +16,7 @@ const Button: React.FC<ButtonPropsType> = ({
                                            }) => {
     const classesButton = `${styles.button} ${xType === 'secondary' ? styles.secondary : styles.default}`
     return (
-        <button className={classesButton} disabled={disabled} {...restProps}></button>
+        <button className={classesButton} disabled={disabled} {...restProps}/>
     );
 };
 

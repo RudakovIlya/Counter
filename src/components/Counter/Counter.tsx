@@ -3,17 +3,24 @@ import Count from "./Count/Count";
 import Button from "../Button/Button";
 import styles from './Counter.module.css'
 
-const maxValue = 10;
-const minValue = 0;
 
 const Counter: React.FC = () => {
+
+    const maxValue = 10;
+    const minValue = 0;
+
     const [count, setCount] = useState<number>(minValue);
 
     const onClickIncrementCount = () => {
-        setCount((prevValue) => prevValue + 1);
+        setCount(count + 1);
     }
+
+    const onClickResetCount = () => {
+        setCount(minValue);
+    }
+
     const onClickDecrementCount = () => {
-        setCount((prevValue) => prevValue - 1);
+        setCount(count - 1);
     }
 
     return (
@@ -21,7 +28,8 @@ const Counter: React.FC = () => {
             <Count count={count} maxValue={maxValue}/>
             <div className={styles['button-container']}>
                 <Button onClick={onClickIncrementCount} disabled={count === maxValue}>Inc</Button>
-                <Button xType={'secondary'} onClick={onClickDecrementCount} disabled={count <= 0}>Reset</Button>
+                <Button xType={'secondary'} onClick={onClickResetCount} disabled={count <= 0}>Reset</Button>
+                <Button onClick={onClickDecrementCount} disabled={count <= 0}>Dec</Button>
             </div>
         </div>
     );
